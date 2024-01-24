@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+body.dark{
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main button{
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.7s;
+}
+body.dark .main button{
+    background-color: white;
+    color: black;
+}
+.clock{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    position: relative;
+}
+.clock::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: black;
+    border: 4px solid red;
+    z-index: 99;
+    transition: 0.2s;
+}
+body.dark .clock::before{
+    background-color: white;
+}
+.clock div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translate(-50%,-100%) rotate(0deg);
+    width: 3px;
+    background-color: black;
+    transition: 0.2s;
+}
+body.dark .clock div{
+    background-color: white;
+}
+.clock .hourBar{
+    height: 20%;
+}
+.clock .minuteBar{
+    height: 25%;
+}
+.clock .secondBar{
+    height: 35%;
+    background-color: red !important;
+}
+
+.time{
+    font-size: 3em;
+}
+body.dark .time{
+    color: white;
+}
+.date{
+    color: #ccc;
+    margin-top: 5px;
+    /* font-size : 1.15em; */
+    letter-spacing: 0.5px;
+}
+
+.date span{
+    padding: 3px 5px;
+    background-color: black;
+    color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+    font-size: 0.95em;
+}
+
+body.dark .date span{
+    background-color: white;
+    color: black;
+}
